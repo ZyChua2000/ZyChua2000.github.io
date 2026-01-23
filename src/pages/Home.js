@@ -2,6 +2,7 @@ import React from "react";
 import MyImage from "../assets/folder.png"; // replace with your image
 import "./Home.css"
 import Particles from "../components/Particles";
+import LiveBrowserInfo from "../components/BrowserInfo";
 
 export default function Home() {
   return (    
@@ -48,6 +49,7 @@ export default function Home() {
           padding: "40px",
         }}
       >
+        <LiveBrowserInfo />
         <img
           src={MyImage}
           alt="Demo"
