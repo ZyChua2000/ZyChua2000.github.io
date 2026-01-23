@@ -1,9 +1,9 @@
 .particle {
   position: fixed;
-  width: 6px;
-  height: 6px;
+  width: 10px;
+  height: 10px;
   background: rgb(185, 59, 59);
-  border-radius: 50%;
+  border-radius: 30%;
   pointer-events: none;
   transform: translate(-50%, -50%);
   animation: fade 0.6s linear forwards;

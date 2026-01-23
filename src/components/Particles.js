@@ -5,20 +5,31 @@ export default function Particles() {
   const [particles, setParticles] = useState([]);
 
   useEffect(() => {
+    let animationFrameId = null;
+    let mousePos = { x: 0, y: 0 };
+    let moved = false;
+
     const handleMove = (e) => {
-      setParticles((prev) => [
-        ...prev.slice(-30),
-        {
-          id: Math.random(),
-          x: e.clientX,
-          y: e.clientY,
-        },
-      ]);
+        mousePos = { x: e.clientX, y: e.clientY };
+        moved = true;
+    };
+
+    const update = () => {
+        if (moved) {
+        setParticles(prev => [...prev.slice(-30), { id: Math.random(), ...mousePos }]);
+        moved = false;
+        }
+        animationFrameId = requestAnimationFrame(update);
     };
 
     window.addEventListener("mousemove", handleMove);
-    return () => window.removeEventListener("mousemove", handleMove);
-  }, []);
+    animationFrameId = requestAnimationFrame(update);
+
+    return () => {
+        window.removeEventListener("mousemove", handleMove);
+        cancelAnimationFrame(animationFrameId);
+    };
+    }, []);
 
   return (
     <>
