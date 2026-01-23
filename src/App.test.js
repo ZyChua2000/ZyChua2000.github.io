@@ -27,6 +27,7 @@ describe('App basic navigation', () => {
     const homeLink = screen.getByRole('link', { name: /Home/i });
     await userEvent.click(homeLink);
 
-    expect(screen.getByText(/Welcome to My Portfolio!/i)).toBeInTheDocument();
+    expect(screen.getByText(/Zheng/i)).toBeInTheDocument();
+    expect(screen.getByText(/Yang/i)).toBeInTheDocument();
   });
 });
