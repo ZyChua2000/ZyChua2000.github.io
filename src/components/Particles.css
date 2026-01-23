@@ -1,0 +1,19 @@
+.particle {
+  position: fixed;
+  width: 6px;
+  height: 6px;
+  background: rgb(185, 59, 59);
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  animation: fade 0.6s linear forwards;
+  z-index: 9999;
+}
+
+@keyframes fade {
+  to {
+    opacity: 0;
+    background: rgb(219, 240, 144);
+    transform: translate(-50%, -50%) scale(0);
+  }
+}
