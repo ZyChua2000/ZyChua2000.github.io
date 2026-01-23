@@ -7,8 +7,8 @@ describe('App basic navigation', () => {
   test('renders Home page by default', () => {
     render(<App />); // App already includes Router
 
-    expect(screen.getByText(/Welcome to My Portfolio!/i)).toBeInTheDocument();
-    expect(screen.getByText(/Check out my projects/i)).toBeInTheDocument();
+    expect(screen.getByText(/Zheng/i)).toBeInTheDocument();
+    expect(screen.getByText(/Yang/i)).toBeInTheDocument();
   });
 
   test('navigates to Projects page when clicking Projects link', async () => {
